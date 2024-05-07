@@ -1,7 +1,7 @@
 #imports
 import pygame as py
 from pygame import Vector2 as Vec2
-import numpy as np
+from numpy import arctan2, pi
 import random, sys
 
 from colors import *
@@ -180,7 +180,7 @@ class Boid:
         if flock != None: this.pos -= flock.vel * ts
         this.forces = Vec2(0,0) # reset forces for next frame
 
-        this.img = py.transform.rotate(this.saved_img, (180/np.pi) * (np.arctan2(-this.vel.y, this.vel.x) - (90 * (np.pi/180)))) # rotate boid image -- due to pygame's skewed coordinate system the rotation has to be altered slightly (hence the negative y axis)
+        this.img = py.transform.rotate(this.saved_img, (180/pi) * (arctan2(-this.vel.y, this.vel.x) - (90 * (pi/180)))) # rotate boid image -- due to pygame's skewed coordinate system the rotation has to be altered slightly (hence the negative y axis)
 
         # keep the boids on screen
         if this.pos.x > 1600:
