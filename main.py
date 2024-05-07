@@ -1,8 +1,7 @@
 #import libraries to be used
 import pygame as py
 from pygame import Vector2 as Vec2
-import numpy as np
-import random, sys, math
+import random, sys
 
 #import other files
 from colors import *
